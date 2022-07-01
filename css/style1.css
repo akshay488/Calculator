@@ -1,0 +1,163 @@
+*, *::before, *::after{
+
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;  
+   
+}
+
+
+
+:root{
+    /* background colors */
+    --background:hsl(222, 26%, 31%);
+    --bodyBackground: hsl(223, 31%, 20%);
+    --screenBackground: hsl(224, 36%, 15%);
+    --numbg:hsl(30, 25%, 89%);
+    --equaltobg: hsl(6, 63%, 50%);
+    --clearkeybg: hsl(225, 21%, 49%);
+    /* text color */
+    --numtxt:hsl(221, 14%, 31%);
+    --screentxt: #fff;
+    /* key shadow */
+    --numShadow:  hsl(28, 16%, 65%);
+    --clearkeyShadow:hsl(224, 28%, 35%);
+    --equaltoShadow:hsl(6, 70%, 34%);
+}
+
+body{
+    background-color: var(--background);
+    color: var(--screentxt);
+}
+.btns{
+    background-color: var(--bodyBackground);
+    border-radius: 5px;
+}
+.theme{
+    background-color: var(--bodyBackground);
+    padding: 5px;
+    border-radius: 20px;
+}
+.screen{
+    background-color: var(--screenBackground);
+    color: var(--screentxt);
+}
+.keys{
+    background-color: var(--numbg);
+    color: var(--numtxt); box-shadow: 0 3px var(--numShadow);
+
+}
+.equalto{
+    background-color: var(--equaltobg);
+    color: var(--screentxt);
+    box-shadow: 0 3px var(--equaltoShadow);
+}
+.clearkey{
+    background-color: var(--clearkeybg);
+    color: var(--screentxt);
+    box-shadow: 0 3px var(--clearkeyShadow);
+}   
+
+
+/* structuring */
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    overflow-y: hidden;
+}
+.wrapper{
+    width:20em; 
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+.header {
+    position:relative;
+    display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   height: 40px;
+   
+  }
+.theme::before{
+    content: "THEME";
+    position: absolute;
+    right:25%;
+    font-size: 0.7rem;
+
+}
+ 
+.theme > div{
+    
+    display:inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+
+.theme div:nth-child(1)::before{
+    content: "1";
+    position: absolute;
+    top :-7px;
+    right: 50px;
+
+}
+.theme div:nth-child(2)::before{
+    content: "2";
+    position: absolute;
+    top :-7px;
+    right: 30px;
+
+}
+.theme div:nth-child(3)::before{
+    content: "3";
+    position: absolute;
+    top :-7px;
+    right: 10px;
+
+}
+
+.theme div:nth-child(1){
+    background-color: var(--equaltobg);
+}
+
+.logo > h3{
+  margin:0;
+}
+
+.screen{
+    padding: 1rem;
+    direction: rtl;
+    
+}
+
+/* grid */
+button{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5em ;
+    font-size: 1.3rem;
+}
+
+.btns{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem; 
+
+}
+
+.equalto  {
+    grid-column:3/span 2 ;  
+}
+.reset{
+    grid-column:1/span 2 ;
+   
+}

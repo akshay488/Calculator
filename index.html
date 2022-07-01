@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Calculator app</title>
+ 
+  <link id="style"rel="stylesheet" href="css/style1.css">
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }  
+    .attribution a { color: hsl(228, 45%, 44%); }
+    html{
+      transition: all 0.5s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="wrapper">
+  <!-- logo section -->
+  <div class="header">
+    <div class="logo">
+      <h3 style="text-transform: capitalize;">calc</h3>
+    </div>
+  <div class="theme" >
+   <div class="style1"></div>
+   <div class="style2"></div>
+   <div class="style3"></div>
+
+  </div>
+</div>
+
+  <!-- screen section -->
+  <div >
+    <div class="screen" data-previousoprnd></div>
+    <div class="screen"data-currentoprnd>399,99</div>
+  </div>
+
+
+  <!-- Calculator btn -->
+  <div class="btns">
+   <button class="keys" data-number>7</button>
+   <button class="keys" data-number>8</button>
+   <button class="keys"data-number>9</button>
+   <button class="clearkey"data-delete>del</button>
+   <button class="keys" data-number>4</button>
+   <button class="keys" data-number>5</button>
+   <button class="keys"data-number>6</button>
+   <button class="keys"data-operator>+</button>
+   <button class="keys"data-number>1</button>
+   <button class="keys"data-number>2</button>
+   <button class="keys" data-number>3</button>
+   <button class="keys" data-operator>-</button>
+   <button class="keys" data-number>.</button>
+   <button class="keys" data-operator>x</button>
+   <button class="keys" data-number>0</button>
+   <button class="keys" data-operator>/</button>
+   <button class="clearkey reset" data-reset>reset</button>
+   <button class="equalto" data-operator>=</button>
+   
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Akshay TR</a>
+  </div>
+</div>
+
+<script src="calc.js" defer>
+</script>
+<script >
+   const theme = document.getElementById('style');
+    const styles = document.querySelector('.theme');
+    styles.addEventListener('click', (e)=>{
+       const stylesheet= e.target.getAttribute('class');
+       switch (stylesheet) {
+        case "style1":  
+        theme.href =  "css/style1.css";
+          
+          break;
+        case "style2": theme.href = "css/style2.css";
+          
+          break;
+        case "style3": theme.href = "css/style3.css";
+          
+          break;
+       
+       }
+
+    });
+    </script>
+ 
+
+</body>
+</html>
